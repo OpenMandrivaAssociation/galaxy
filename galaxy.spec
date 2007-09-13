@@ -1,7 +1,7 @@
-%define	rel 	1
+%define	rel 	2
 %define	release %mkrel %{rel}
 
-Summary:        Mandriva theme
+Summary:        Mandriva Galaxy theme
 Name:           galaxy
 Version:        1.0.5
 Release:        %{release}
@@ -21,26 +21,33 @@ Mandriva Galaxy theme
 
  
 %package gnome
-Summary: Mandriva theme for GNOME
+Summary: Mandriva Galaxy theme for GTK+2 and GNOME
 Group: Graphical desktop/GNOME
 Requires: gnome-icon-theme
  
 %description gnome
-Mandriva theme for GNOME
+Mandriva theme for GNOME and GTK2 applications
+
+%package gtk12
+Summary: Mandriva Galaxy theme for GTK+ 1.2 applications
+Group: Graphical desktop/GNOME
+ 
+%description gtk12
+Mandriva Galaxy theme for GTK 1.2 applications
 
 %package kde
-Summary: 	Mandriva theme for KDE - Widget design
+Summary: 	Mandriva Galaxy theme for KDE - Widget design
 Group: 		Graphical desktop/KDE
 
 %description kde
-Mandriva theme for KDE - Widget design
+Mandriva Galaxy theme for KDE - Widget design
 
 %package kde-kwin
-Summary:	Mandriva theme for KDE - Window Decorations
+Summary:	Mandriva Galaxy theme for KDE - Window Decorations
 Group:		Graphical desktop/KDE
 
 %description kde-kwin
-Mandriva theme for KDE - Window Decorations
+Mandriva Galaxy theme for KDE - Window Decorations
 
 
 %prep
@@ -78,8 +85,11 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root,-)
 %doc README ChangeLog
 %{_libdir}/gtk-2.0/*/engines/*.so
-%{_libdir}/gtk/themes/engines/*.so
 %{_datadir}/themes/*
+
+%files gtk12
+%defattr(-,root,root,-)
+%{_libdir}/gtk/themes/engines/*.so
 
 %files kde-kwin
 %defattr(-,root,root,-)
