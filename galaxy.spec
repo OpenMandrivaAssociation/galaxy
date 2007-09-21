@@ -1,4 +1,4 @@
-%define	rel 	2
+%define	rel 	3
 %define	release %mkrel %{rel}
 
 Summary:        Mandriva Galaxy theme
@@ -31,6 +31,7 @@ Mandriva theme for GNOME and GTK2 applications
 %package gtk12
 Summary: Mandriva Galaxy theme for GTK+ 1.2 applications
 Group: Graphical desktop/GNOME
+Conflicts: galaxy-gnome < 1.0.5-2mdv
  
 %description gtk12
 Mandriva Galaxy theme for GTK 1.2 applications
