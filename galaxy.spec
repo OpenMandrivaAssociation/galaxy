@@ -11,6 +11,7 @@ BuildRequires:  kdelibs-devel
 BuildRequires:  kdebase-devel >= 3.1.94-11mdk
 BuildRequires:  gdk-pixbuf-devel
 Source0:        %{name}-%{version}.tar.bz2
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 Mandriva Galaxy theme
