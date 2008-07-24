@@ -1,7 +1,7 @@
 Summary:        Mandriva Galaxy theme
 Name:           galaxy
 Version:        1.0.6
-Release:        %mkrel 1
+Release:        %mkrel 3
 License:        GPL
 Group:          Graphical desktop/Other
 URL:            http://www.mandrivalinux.com/
