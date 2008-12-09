@@ -1,7 +1,7 @@
 Summary:        Mandriva Galaxy theme
 Name:           galaxy
 Version:        1.0.6
-Release:        %mkrel 5
+Release:        %mkrel 2
 License:        GPLv2+
 Group:          Graphical desktop/Other
 URL:            http://www.mandrivalinux.com/
@@ -56,7 +56,7 @@ Mandriva Galaxy theme for KDE - Window Decorations
 # FIXME: better fix *.m4 once and for all
 export QTLIB="%{_prefix}/lib/qt3/%{_lib}"
 
-%configure2_5x
+%configure_kde3
 
 %make
 
@@ -65,16 +65,19 @@ rm -rf $RPM_BUILD_ROOT
 
 %makeinstall_std
 
+# use same config lib for all galaxy theme
+cp -r $RPM_BUILD_ROOT/%_kde3_libdir/kde3/kwin_mandrake_config.la $RPM_BUILD_ROOT/%_kde3_libdir/kde3/kwin_mandrake2_config.la
+cp -r $RPM_BUILD_ROOT/%_kde3_libdir/kde3/kwin_mandrake_config.so $RPM_BUILD_ROOT/%_kde3_libdir/kde3/kwin_mandrake2_config.so
+cp -r $RPM_BUILD_ROOT/%_kde3_libdir/kde3/kwin_mandrake_config.la $RPM_BUILD_ROOT/%_kde3_libdir/kde3/kwin_mandrake3_config.la
+cp -r $RPM_BUILD_ROOT/%_kde3_libdir/kde3/kwin_mandrake_config.so $RPM_BUILD_ROOT/%_kde3_libdir/kde3/kwin_mandrake3_config.so
+
+mkdir -p %buildroot{%_datadir,%_libdir}
+mv %buildroot%_kde3_libdir/gtk* %buildroot%_libdir
+mv %buildroot%_kde3_datadir/themes %buildroot%_datadir
 
 #remove unpackaged files 
 rm -f $RPM_BUILD_ROOT%{_libdir}/gtk-2.0/*/engines/*.la \
   $RPM_BUILD_ROOT%{_libdir}/gtk/themes/engines/*.la
-
-# use same config lib for all galaxy theme
-cp -r $RPM_BUILD_ROOT/%_libdir/kde3/kwin_mandrake_config.la $RPM_BUILD_ROOT/%_libdir/kde3/kwin_mandrake2_config.la
-cp -r $RPM_BUILD_ROOT/%_libdir/kde3/kwin_mandrake_config.so $RPM_BUILD_ROOT/%_libdir/kde3/kwin_mandrake2_config.so
-cp -r $RPM_BUILD_ROOT/%_libdir/kde3/kwin_mandrake_config.la $RPM_BUILD_ROOT/%_libdir/kde3/kwin_mandrake3_config.la
-cp -r $RPM_BUILD_ROOT/%_libdir/kde3/kwin_mandrake_config.so $RPM_BUILD_ROOT/%_libdir/kde3/kwin_mandrake3_config.so
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -91,19 +94,18 @@ rm -rf $RPM_BUILD_ROOT
 
 %files kde-kwin
 %defattr(-,root,root,-)
-%_libdir/kde3/kwin3_mandrake*.la
-%_libdir/kde3/kwin3_mandrake*.so*
-%_libdir/kde3/kwin_mandrake*.la
-%_libdir/kde3/kwin_mandrake*.so*
-%_datadir/apps/kwin/*.desktop
+%_kde3_libdir/kde3/kwin3_mandrake*.la
+%_kde3_libdir/kde3/kwin3_mandrake*.so*
+%_kde3_libdir/kde3/kwin_mandrake*.la
+%_kde3_libdir/kde3/kwin_mandrake*.so*
+%_kde3_appsdir/kwin/*.desktop
 
 
 
 %files kde
 %defattr(-,root,root,-)
-%_libdir/kde3/plugins/styles/*.la
-%_libdir/kde3/plugins/styles/*.so*
-
-%_datadir/apps/kstyle/themes/galaxy.themerc
+%_kde3_libdir/kde3/plugins/styles/*.la
+%_kde3_libdir/kde3/plugins/styles/*.so*
+%_kde3_appsdir/kstyle/themes/galaxy.themerc
 
 
