@@ -1,14 +1,14 @@
 Summary:        Mandriva Galaxy theme
 Name:           galaxy
 Version:        1.0.6
-Release:        %mkrel 3
-License:        GPL
+Release:        %mkrel 5
+License:        GPLv2+
 Group:          Graphical desktop/Other
 URL:            http://www.mandrivalinux.com/
 BuildRequires:  gtk+1.2-devel
 BuildRequires:  gtk+2-devel
 BuildRequires:  kdelibs-devel
-BuildRequires:  kdebase-devel >= 3.1.94-11mdk
+BuildRequires:  kdebase3-devel >= 3.1.94-11mdk
 BuildRequires:  gdk-pixbuf-devel
 Source0:        %{name}-%{version}.tar.bz2
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
