@@ -1,0 +1,39 @@
+diff -p -up galaxy-1.0.6/configure.in~ galaxy-1.0.6/configure.in
+--- galaxy-1.0.6/configure.in~	2007-11-30 16:48:06.000000000 +0100
++++ galaxy-1.0.6/configure.in	2010-11-11 12:19:25.000000000 +0100
+@@ -41,10 +41,10 @@ AC_HEADER_STDC
+ AC_C_CONST
+ 
+ #KDE_SET_PREFIX
+-KDE_CHECK_FINAL
++dnl KDE_CHECK_FINAL
+ 
+ dnl KDE_USE_QT
+-AC_PATH_KDE
++dnl AC_PATH_KDE
+ 
+ 
+ AC_OUTPUT([
+@@ -57,11 +57,4 @@ theme/GalaxySquared/Makefile
+ metacity/Makefile
+ metacity/Galaxy2/Makefile
+ metacity/GalaxySquared/Makefile
+-thememdk/generic/Makefile
+-thememdk/generic/config/Makefile
+-thememdk/Makefile
+-thememdk/mandrake_client/Makefile
+-thememdk/mandrake_client2/Makefile
+-thememdk/mandrake_client3/Makefile
+-thememdk/thememdk/Makefile
+ ])
+diff -p -up galaxy-1.0.6/Makefile.am~ galaxy-1.0.6/Makefile.am
+--- galaxy-1.0.6/Makefile.am~	2007-03-12 13:08:41.000000000 +0100
++++ galaxy-1.0.6/Makefile.am	2010-11-11 12:19:37.000000000 +0100
+@@ -1,6 +1,6 @@
+ @SET_MAKE@
+ 
+-SUBDIRS = gtk-2.0 gtk-1.2 theme metacity thememdk
++SUBDIRS = gtk-2.0 gtk-1.2 theme metacity
+ 
+ dist: changelog
+ 
