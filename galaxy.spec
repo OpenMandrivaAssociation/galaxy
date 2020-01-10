@@ -34,7 +34,7 @@ Mandriva Galaxy theme for GTK 1.2 applications
 
 %prep
 %setup -q 
-%apply_patches
+%autopatch -p1
 autoreconf -fi
 
 %build
