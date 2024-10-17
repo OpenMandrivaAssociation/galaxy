@@ -4,7 +4,7 @@ Version:        1.0.6
 Release:        6
 License:        GPLv2+
 Group:          Graphical desktop/GNOME
-URL:            http://www.mandrivalinux.com/
+URL:            https://www.mandrivalinux.com/
 BuildRequires:  gtk+1.2-devel
 BuildRequires:  gtk+2-devel
 BuildRequires:  gdk-pixbuf-devel
